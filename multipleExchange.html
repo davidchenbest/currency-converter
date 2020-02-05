@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+    <title>Multiple Exchanges</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Currency Converter</h1>
+      <a href="currencyExchange.html">Single Conversion</a>
+    </div>
+    <div class="baseContainer">
+      <select id='base'>
+        <option value="AUD">Australia</option>
+        <option value="CAD">Canada</option>
+        <option value="CNY">China</option>
+        <option value="EUR">Euro</option>
+        <option value="JPY">Japan</option>
+        <option value="USD" selected="selected">United States</option>
+      </select>
+
+      <input id='amount' type="text" name="" value="1">
+    </div>
+
+    <div class="country">
+      <input type="checkbox"  value="AUD">Australia
+      <input type="checkbox"  value="CAD">Canada
+      <input type="checkbox"  value="CNY">China
+      <input type="checkbox"  value="EUR">Euro
+      <input type="checkbox"  value="JPY">Japan
+      <input type="checkbox"  value="USD">United States
+      <input type="text" name="" value="" placeholder="Other Currency Code">
+    </div>
+
+
+    <button id='submit' type="button" name="button">Submit</button>
+
+    <div class="result">
+      <h3 id='outAmount'></h3>
+    </div>
+
+
+
+
+  </body>
+
+  <script src="multiple.js"></script>
+</html>

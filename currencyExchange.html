@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Currency Converter</h1>
+      <a href="multipleExchange.html">Multiple Conversion</a>
+    </div>
+
+      <div class="baseContainer">
+        <select id='base'>
+          <option value="AUD">Australia</option>
+          <option value="CAD">Canada</option>
+          <option value="CNY">China</option>
+          <option value="EUR">Euro</option>
+          <option value="JPY">Japan</option>
+          <option value="USD" selected="selected">United States</option>
+        </select>
+
+        <input id='amount' type="text" name="" value="1">
+      </div>
+      <div class="outContainer">
+
+        <select id='outBase'>
+          <option value="AUD">Australia</option>
+          <option value="CAD">Canada</option>
+          <option value="CNY">China</option>
+          <option value="EUR">Euro</option>
+          <option value="JPY">Japan</option>
+          <option value="USD" selected="selected">United States</option>
+        </select>
+        <h3 id='outAmount'></h3>
+      </div>
+
+
+
+      <button id='submit' type="button" name="button">Submit</button>
+
+
+
+
+
+  </body>
+  <script type="text/javascript">
+    let submit = document.querySelector('#submit');
+    let amount;
+    let base = document.querySelector('#base');
+    let outBase;
+    let outAmount = document.querySelector('#outAmount');
+
+
+
+
+
+    submit.onclick = function(){
+      amount = document.querySelector('#amount').value;
+      base = document.querySelector('#base').value;
+      outBase = document.querySelector('#outBase').value;
+
+      let api = `https://api.exchangeratesapi.io/latest?base=${base}`;
+      fetch(api).then(
+      response => {
+        return response.json();
+      }
+      )
+      .then(data =>{
+        let rate = data['rates'][outBase];
+        console.log();
+        let output = amount*rate;
+        outAmount.innerHTML = output
+
+      }
+      )
+    };
+
+
+
+
+
+
+
+
+  </script>
+</html>
